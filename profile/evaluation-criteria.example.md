@@ -8,46 +8,42 @@ Rules and heuristics for evaluating job relevance. Used by the scan-jobs agent.
 
 - Focus on deal-breakers first: experience level too senior, location impossible, ethical red flag
 - When in doubt, "Discuss" over "Skip" — the cost of missing a good opportunity exceeds the cost of one extra review
-- Open to any field for first job — passion areas are a bonus
-- Ethics concerns always go to "Discuss" for user input
+- Ethics concerns always go to "Discuss" for your input
 
 ## Experience Requirements - Flexibility Heuristic
 
-Based on recruiter feedback: **requirements up to 3 years are often flexible**.
+Companies often inflate experience requirements beyond what they'll actually accept. Apply judgment:
 
-- Companies often inflate experience requirements beyond what they'll actually accept
-- If a role lists "2-3 years" but otherwise sounds junior-level and skills match → mark as **Relevant** or **Discuss**, not Skip
-- Consider the overall tone: does the job description SOUND like an entry-level role?
-- Only auto-skip for experience when it's clearly senior (5+ years, "lead"/"principal" titles, explicitly "senior" level)
-- **Ceiling rule**: Jobs with "Senior", "Staff", "Principal", "Lead", or "Architect" in the title, OR that require 4+ years of experience, should be **DISCUSS at most** — never RELEVANT
-- Borderline signals like "mentor juniors" → mark as "Discuss", not auto-skip
+- If a role lists slightly more years than you have but the description otherwise matches your level → mark as **Relevant** or **Discuss**, not Skip
+- Consider the overall tone: does the job description match roles at your experience level?
+- Only auto-skip for experience when it's clearly a level above yours (e.g., senior titles when you're junior, principal/staff when you're mid-level)
+- **Ceiling rule**: Jobs that are clearly 2+ levels above your current level should be **DISCUSS at most** — never RELEVANT
+- Borderline signals like "mentor juniors" or "lead a team" → mark as "Discuss", not auto-skip
 
 ## Degree Requirements - Flexibility Heuristic
 
-Based on recruiter feedback: **degree requirements are often flexible too**.
+<!-- How to handle degree requirements -->
 
 - If degree is listed as "advantage" or "nice-to-have" → apply anyway
-- If posting says "or equivalent experience" → bootcamp + projects can qualify
-- Only treat degree as hard blocker when: role is at a very formal/bureaucratic company AND degree is explicitly required with no flexibility language AND the role clearly needs academic foundations
+- If posting says "or equivalent experience" → relevant experience can qualify
+- Only treat degree as hard blocker when explicitly required with no flexibility language AND the role clearly needs academic foundations
 
 ## International Job Assessment
 
-When analyzing international (non-Israeli) jobs, additionally consider:
-- **Work authorization**: [Your citizenships — e.g., "EU citizenship means EU jobs need no permit"]
-- **Visa sponsorship**: Check for explicit sponsorship mentions. [Add notes about your visa situation for different regions]
-- **Relocation support**: Does the company offer relocation packages?
-- **Language**: [Your language requirements — e.g., "English-speaking environments preferred"]
-- **Remote**: Remote roles in countries where you have work authorization are especially attractive
+<!-- Rules for evaluating international jobs. Customize based on your citizenship and work authorization -->
+
+- **Citizenship/work rights**: [Your citizenships and what regions they cover]
+- **Visa sponsorship**: [What you need for different regions]
+- **Relocation support**: [How important is this to you?]
+- **Language**: [What work languages are you comfortable with?]
 
 Verdicts for international jobs:
-- **Relevant**: Good fit + realistic path (work authorization exists, or explicit sponsorship)
+- **Relevant**: Good fit + realistic work authorization path
 - **Discuss**: Good fit but unclear logistics
-- **Skip**: No work authorization path, location/language barrier, or skills mismatch
+- **Skip**: No path to work authorization, or location/language barrier
 
 ## "Foot in Door" Opportunities
 
-Jobs that aren't directly technical but could be valuable entry points:
-- Non-tech roles at tech companies
-- Hybrid roles mixing tech with other functions
+<!-- Roles that aren't a direct match but could be strategic stepping stones toward your target roles -->
 
-**Mark these as Discuss**, not Skip. Let the user decide if it's worth pursuing.
+Mark these as ⚠️ Discuss, not Skip. Let the user decide if it's worth pursuing.

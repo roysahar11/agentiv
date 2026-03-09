@@ -28,7 +28,7 @@ const SCRAPERS = [
 // --- CLI Parsing ---
 function parseArgs() {
   const args = process.argv.slice(2);
-  const parsed = { scope: null, since: null, simplifyCategories: null };
+  const parsed = { scope: null, since: null, simplifyCategories: null, disabled: [] };
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '--scope' && args[i + 1]) {
@@ -37,11 +37,13 @@ function parseArgs() {
       parsed.since = parseInt(args[++i], 10);
     } else if (args[i] === '--simplify-categories' && args[i + 1]) {
       parsed.simplifyCategories = args[++i].split(',').map(s => s.trim());
+    } else if (args[i] === '--disabled' && args[i + 1]) {
+      parsed.disabled = args[++i].split(',').map(s => s.trim());
     }
   }
 
   if (!parsed.scope || !['israeli', 'international', 'all'].includes(parsed.scope)) {
-    console.error('Usage: node fetch-all.js --scope <israeli|international|all> [--since <epoch>] [--simplify-categories "Software,AI/ML/Data"]');
+    console.error('Usage: node fetch-all.js --scope <israeli|international|all> [--since <epoch>] [--simplify-categories "Software,AI/ML/Data"] [--disabled "arbeitnow,simplify-jobs"]');
     process.exit(1);
   }
 
@@ -55,13 +57,15 @@ function parseArgs() {
 
 // --- Main ---
 async function main() {
-  const { scope, since, simplifyCategories } = parseArgs();
+  const { scope, since, simplifyCategories, disabled } = parseArgs();
   const date = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
 
-  // Filter scrapers by scope
-  const selected = SCRAPERS.filter(s =>
-    scope === 'all' || s.scope === scope
-  );
+  // Filter scrapers by scope and disabled list
+  const selected = SCRAPERS.filter(s => {
+    if (scope !== 'all' && s.scope !== scope) return false;
+    const name = path.basename(s.module);
+    return !disabled.includes(name);
+  });
 
   if (selected.length === 0) {
     console.log(JSON.stringify({ scope, jobs: [], scrapers: [], errors: ['No scrapers for scope: ' + scope] }));

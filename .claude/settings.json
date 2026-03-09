@@ -23,7 +23,8 @@
       "Bash(git push*)",
       "mcp__claude-in-chrome__*"
     ],
-    "deny": [
+    "deny": [],
+    "ask": [
       "Bash(rm -rf *)",
       "Bash(rm -r *)",
       "Edit(.claude/**)",
@@ -32,9 +33,9 @@
       "Edit(CLAUDE.md)",
       "Edit(Resumes/**)",
       "Write(.claude/**)",
+      "Write(CLAUDE.md)",
       "Write(profile/**)",
       "Write(config/**)",
-      "Write(CLAUDE.md)",
       "Write(Resumes/**)"
     ]
   }

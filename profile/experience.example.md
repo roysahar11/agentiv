@@ -7,70 +7,65 @@ Each entry contains the complete information about that experience — what was 
 ---
 
 ## Position Sought
-[e.g., Junior DevOps Engineer / Junior Developer / Entry-level tech role]
+<!-- e.g., Junior DevOps Engineer / Full Stack Developer / Data Engineer -->
 
 ## Current Status
-- [Current activity 1]
-- [Current activity 2]
-- [Actively seeking: ...]
-
-## Contacts
-- Phone: [Your phone number]
-- Email: [Your email]
-- LinkedIn: [Your LinkedIn URL]
-- GitHub: [Your GitHub URL]
+<!-- Brief current situation -->
 
 ---
 
 ## Technical Skills
 
 ### Strong (Use Confidently)
-- **Cloud**: [e.g., AWS (ECS, EC2, IAM, VPC, S3)]
-- **IaC**: [e.g., Terraform, Ansible]
-- **Containers**: [e.g., Docker, Kubernetes]
-- **CI/CD**: [e.g., GitHub Actions, Jenkins]
-- **Programming**: [e.g., Python, JavaScript, Bash]
-- **OS**: [e.g., Linux, Windows]
+<!-- Skills you can discuss in depth and use daily -->
+- **Category**: [Specific tools/technologies]
 
-### Working Proficiency (Can Use with Some Reference)
-- [Skill 1]
-- [Skill 2]
+### Working Proficiency
+<!-- Skills you've used in projects but aren't expert-level -->
+- **Category**: [Specific tools/technologies]
 
 ### Basic Knowledge / Exposure
-- [Skill 1] — [context, e.g., "Used in bootcamp project"]
-- [Skill 2] — [context]
+<!-- Skills you've been exposed to or used briefly -->
+- **Category**: [Specific tools/technologies]
 
 ---
 
 ## Work Experience
 
-### [Job Title] — [Company Name]
-**[Start Date] – [End Date]** | [Location]
+### [Role Title] — [Company/Organization]
+**Period**: [Start] – [End or Present]
+**Context**: [Brief context about the role]
 
-[Brief overview of the role]
+**What I did:**
+- [Specific accomplishment with technologies used]
+- [Another accomplishment with measurable outcome]
 
-**Key achievements:**
-- [Achievement 1 with metrics if possible]
-- [Achievement 2]
-- [Achievement 3]
+**Technologies**: [List of tools/technologies used]
 
-**Technologies used:** [List of technologies]
+<!-- Repeat for each work experience -->
 
-### [Another Job Title] — [Company Name]
-**[Start Date] – [End Date]** | [Location]
+---
 
-[Description...]
+## Projects
+
+### [Project Name]
+**Context**: [What it was and why you built it]
+**What I did**: [Specific technical details]
+**Technologies**: [Stack used]
+**Outcome**: [Results, metrics, impact]
+
+<!-- Repeat for each project -->
 
 ---
 
 ## Education & Training
 
-### [Course/Degree Name]
-**[Institution]** | [Duration/Dates]
-- [Key details]
-- [What you learned]
+### [Course/Degree Name] — [Institution]
+**Period**: [Start] – [End]
+**Key topics**: [What you learned]
+**Hours**: [If relevant — e.g., bootcamp hours]
 
 ---
 
 ## Extended Background
-[Any additional context — volunteer work, side projects, relevant life experiences that strengthen your professional story]
+<!-- Any additional experience that strengthens your professional story — previous careers, volunteer work, leadership roles, personal projects, etc. -->

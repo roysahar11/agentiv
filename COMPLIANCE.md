@@ -4,49 +4,58 @@
 
 This project is published for **educational and personal use purposes**. It demonstrates how AI agents can automate job search workflows, including interaction with job platforms and career websites.
 
-For sources that provide public APIs or explicitly permit programmatic access, this repository includes **traditional scrapers** (HTTP requests, RSS parsing, etc.). For sources that restrict automated access in their Terms of Service, the repository instead contains **natural language instructions** (skills and agent definitions) that direct Claude Code to use browser automation (via the Claude in Chrome extension) to navigate pages and read content — much like a human browsing manually.
+This repository accesses job platforms in two ways:
 
-Some of the platforms accessed via browser automation may restrict or prohibit automated access in their Terms of Service. These instructions are provided as-is for learning and reference. **By using this project, you accept full responsibility for ensuring your use complies with all applicable laws, regulations, and platform Terms of Service in your jurisdiction.**
+1. **Node.js scrapers** (`scripts/scrapers/`) that make direct HTTP requests to public APIs and RSS feeds. These are used only for sources that explicitly provide programmatic access.
+
+2. **Natural language instructions** (skill and agent definitions in `.claude/`) that tell Claude Code to open job platforms in your own Chrome browser (via the [Claude in Chrome](https://chromewebstore.google.com/detail/claude-in-chrome/) extension), using your existing logged-in accounts and authentication. It navigates pages, scrolls through listings, and reads job postings — the same way you would browse manually. No headless browsers, no fake accounts, and no direct HTTP scraping — all browsing happens in your real Chrome session.
+
+Some of the platforms accessed via browser automation may restrict or prohibit automated access in their Terms of Service. The browser automation instructions in this repository are provided as-is for learning and reference. **By using this project, you accept full responsibility for ensuring your use complies with all applicable laws, regulations, and platform Terms of Service in your jurisdiction.**
 
 The authors and contributors of this project are not responsible for any misuse or any consequences arising from the use of this software. See the [LICENSE](LICENSE) file for full warranty and liability disclaimers.
 
-## Source Categories
+## How Each Source Is Accessed
 
-When integrating job sources into your search pipeline, each source falls into one of three categories:
+### Public API / Open Data (Node.js scrapers)
 
-### 1. Public APIs & Open Data
+These sources provide explicit programmatic access. The repository includes Node.js scripts that call them directly.
 
-Sources that offer explicit programmatic access — public REST APIs, RSS feeds, open GitHub datasets. These are designed for automated consumption and are generally safe to use.
+| Source | Method | Details |
+|--------|--------|---------|
+| **Arbeitnow** | REST API | Paginated JSON endpoint (`/api/job-board-api`). Rate-limited with delays between pages. |
+| **SimplifyJobs** | GitHub raw file | Reads a publicly maintained JSON file from the [SimplifyJobs](https://github.com/SimplifyJobs/New-Grad-Positions) GitHub repository. Single HTTP request per run. |
+| **Secret Tel Aviv** | RSS feed | Standard XML/RSS feed (`/wpjobboard/xml/rss/`). Fetched at most a few times per day. |
 
-**Best practice:** Respect rate limits and any usage guidelines provided by the source.
+### Browser Automation (Claude in Chrome)
 
-### 2. Browser Automation
+These sources do not offer public APIs. Instead of scraping them, the repository contains instructions that tell Claude Code to browse them in your own Chrome browser, using your existing accounts — navigating, scrolling, and reading content like a human user.
 
-Sources that don't offer a public API but can be accessed through browser automation. This project uses Claude Code with the Claude in Chrome extension to browse these platforms — the agent follows natural language instructions to navigate pages and read content, rather than running traditional scraping scripts.
+| Source | What the instructions do |
+|--------|--------------------------|
+| **LinkedIn** | Search for jobs by keyword/location, scroll through result pages, read job cards and descriptions |
+| **AllJobs** | Browse job listings, scroll to load content, read postings |
+| **Built In** | Navigate to location-filtered pages, read job listings |
+| **Wellfound** | Browse startup job listings, read postings |
 
-**This repository includes instructions that fall into this category.** They are published for educational purposes to demonstrate AI-driven browser automation in the context of job searching. Whether and how you use them is your responsibility.
+The browser automation runs at normal browsing speed with human-like pauses. It uses your own Chrome browser and your own accounts — no headless browsers, no fake accounts, no bypassing of authentication or rate-limiting mechanisms.
 
-**Best practice:** Browse at human-like speeds, avoid bulk extraction, and review each platform's ToS before use.
+### WhatsApp Groups (self-hosted API)
 
-### 3. Manual-Only Sources
-
-Some platforms are best accessed manually or through their own built-in alert systems (email notifications, saved searches). When a platform offers no API and explicitly prohibits automation, consider using their native tools instead.
+Job postings shared in WhatsApp groups are read via [WAHA](https://waha.devlike.pro/), a self-hosted WhatsApp Web API running on the user's own machine. This reads the user's own chat history — no third-party access is involved.
 
 ## Respectful Access Principles
 
-Regardless of the method, follow these principles:
-
-- **Rate limit** all automated requests — don't hammer servers
+- **Rate limit** all automated requests — scrapers include delays between pages
 - **Minimize volume** — fetch only what you need for your personal search
 - **Respect robots.txt** where applicable
-- **Stop if asked** — if a platform blocks or rate-limits you, don't circumvent it
+- **Stop if blocked** — if a platform rate-limits or blocks you, don't circumvent it
 
 ## Adding New Sources
 
 Before automating a new job source, check:
 
-1. Does it offer a public API or RSS feed? → Use that first
+1. Does it offer a public API or RSS feed? → Use a direct scraper
 2. What does its Terms of Service say about automated access?
 3. What does its robots.txt permit?
 
-Prefer public APIs and open data. Use browser automation only when necessary and with awareness of the associated ToS considerations.
+Use direct HTTP scrapers only for sources that explicitly permit programmatic access. For everything else, use browser automation with awareness of the associated ToS considerations.

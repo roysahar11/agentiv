@@ -65,7 +65,7 @@ The user will be interviewed on everything in this resume. Every claim — skill
 
 **Summary**: Write the user's elevator pitch, not a response to the job description. The test: would this summary make sense to someone who hasn't read the JD? If it only works as a reply to this specific posting — if it borrows the JD's buzzwords — rewrite it to describe the user in their own terms.
 
-When adapting language for ATS matching, the boundary is clear: rephrase what the user did using their vocabulary, but don't add what they didn't do. When unsure whether something is documented, check the profile rather than guessing — or flag it for the user's review.
+When adapting language for ATS matching, the boundary is clear: rephrase what the user did using their vocabulary, but don't add what wasn't done. When unsure whether something is documented, check the profile rather than guessing — or flag it for the user's review.
 
 ## Autonomous Mode Guardrails
 

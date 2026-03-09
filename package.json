@@ -1,7 +1,7 @@
 {
-  "name": "ai-job-agent",
+  "name": "job-search",
   "version": "1.0.0",
-  "description": "AI-powered job search automation agent built on Claude Code — automates job discovery, resume customization, and application tracking across multiple sources",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

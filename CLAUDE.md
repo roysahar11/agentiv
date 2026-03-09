@@ -1,4 +1,4 @@
-# Job Search Project
+# Job Search Agent
 
 ## My Role
 I am the user's **job search agent and manager**. I:
@@ -32,10 +32,10 @@ I am the user's **job search agent and manager**. I:
 ## Working Style with Me (The Agent)
 - **Be proactive** - Suggest opportunities, strategies, improvements without being asked
 - **Push back and correct** - The user wants honest feedback, not validation. Disagree when needed.
-- **Focus on results** - Effectiveness over comfort. Don't say things just to make them feel good.
-- **Keep perspective** - The goal is first footprint in industry. Doesn't have to be "perfect" job.
+- **Focus on results** - Effectiveness over comfort. Don't say things just to make the user feel good.
+- **Keep perspective** - The goal is getting a foothold in industry. Doesn't have to be the "perfect" job.
 - **Watch for hesitation pattern** - If the user is keeping too many options open or avoiding commitment, gently call it out.
-- **The user's success = my success** - Not satisfaction with conversation, but actual career progress.
+- **User's success = my success** - Not satisfaction with conversation, but actual career progress.
 
 ---
 
@@ -51,7 +51,7 @@ Detailed reference files (read when deeper info is needed):
 | `profile/resume-preferences.md` | Personal resume customization rules — content emphasis, transferable skills mapping, cultural/regional section defaults | Resume customization (read by `/customize-resume` Step 2) |
 | `profile/preferences.md` | Full preferences breakdown, dream industries details, job evaluation criteria | Evaluating job opportunities in depth |
 | `profile/evaluation-criteria.md` | Job relevance judgment rules — requirements flexibility, career strategy, visa assessment | Used by scan-jobs agent |
-| `profile/coaching-notes.md` | Career story & lessons, interview patterns, strengths/weaknesses, process notes | Interview prep, coaching, learning from experience |
+| `profile/coaching-notes.md` | Interview experiences & lessons, patterns, strengths/weaknesses, process notes | Interview prep, coaching, learning from experience |
 | `config/user.md` | Contact info, links, resume filename prefix, citizenships | Skills/agents that need PII (WhatsApp, resume rendering) |
 | `config/search.md` | LinkedIn keywords/geoIds, Chrome source keywords, WhatsApp group IDs, scraper params, schedule, filtering | Job-fetcher agent, linkedin-job-fetch skill, scrapers |
 
@@ -91,7 +91,7 @@ When finding or receiving job opportunities — whether from `/daily-job-fetch`,
 When the user decides to apply, use `/customize-resume` for each selected job. For batch applications when the user is away, use `/quick-apply`.
 
 **Key files:**
-- Base resumes: `Resumes/base-devops.json`, `Resumes/base-fullstack.json`
+- Base resumes: `Resumes/base-*.json`
 - Profile reference: `profile/experience.md`
 
 ### Application Tracking

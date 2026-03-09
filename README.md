@@ -196,9 +196,7 @@ Each `config/` and `profile/` file has an `.example` template showing the expect
 
 ## Compliance & Disclaimer
 
-This project includes scrapers for sources that permit programmatic access, and natural language instructions that direct Claude Code to browse other job platforms via browser automation (Claude in Chrome extension). Some of these platforms may restrict automated access in their Terms of Service. **The browser automation instructions are published for educational and personal use purposes.** By using this project, you accept full responsibility for ensuring your use complies with all applicable laws and platform Terms of Service.
-
-See [COMPLIANCE.md](COMPLIANCE.md) for details on source categories, respectful access principles, and guidance on adding new sources.
+This project includes instructions that tell Claude Code to browse certain job platforms using the Claude in Chrome extension. Some of these platforms may restrict automated access in their Terms of Service. These instructions are published for educational and personal use purposes. By using this project, you accept full responsibility for ensuring your use complies with all applicable laws and platform Terms of Service. See [COMPLIANCE.md](COMPLIANCE.md) for full details.
 
 ## License
 

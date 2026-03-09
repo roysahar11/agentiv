@@ -1,89 +1,49 @@
 # [Your Name] - Job Preferences & Aspirations
 
-Job search preferences, career goals, aspirations, and criteria for evaluating opportunities.
+This file contains your job search preferences, career goals, aspirations, and criteria for evaluating opportunities.
 
 ---
 
 ## Career Goals
 
-- **Primary Goal**: [e.g., Land first tech industry job]
-- **Direction**: [e.g., DevOps core, open to development]
-- **Long-term**: [e.g., Cloud architecture specialist]
+- **Primary Goal**: [Your main career objective — e.g., break into tech, advance to senior role, pivot to new domain]
+- **Direction**: [Core skill / direction you want to grow in]
+- **Long-term**: [Where you want to be in 3-5 years]
 
 ---
 
 ## Target Roles
 
-- [Role 1]
-- [Role 2]
-- [Role 3]
+<!-- List specific role titles you're looking for -->
 
 ---
 
-## Positioning
+## Location Preferences
 
-**Your key advantages:**
-- [Advantage 1]
-- [Advantage 2]
+- **Preferred locations**: [Cities/regions]
+- **Open to remote**: [Yes/No/Hybrid]
+- **Relocation**: [Willing to relocate? Where?]
 
----
+## Compensation
 
-## Work Preferences
+- **Minimum salary**: [Your floor]
+- **Target salary**: [What you're aiming for]
+- **Currency**: [ILS/USD/EUR]
 
-### Location
-- **Primary**: [Your area]
-- **Open to**: [Other locations]
-- **Relocation**: [Details]
+## Work Setup
 
-### Relocation Details
-- **Citizenships**: [Your citizenships and work authorizations]
-- **Languages**: [Languages and proficiency]
-- **Preferred targets**: [Countries/regions]
-
-### Work Setup
-- [Preference: hybrid/remote/onsite]
-
-### Salary
-- Target: [Range]
-- [Flexibility notes]
-
-### Company Type
-- [Size preference]
-- [Values]
+- **Preferred**: [Remote / Hybrid / On-site]
+- **Schedule**: [Full-time / Part-time / Flexible]
 
 ---
+
+## Dream Industries
+<!-- Industries you're most excited about, ranked by enthusiasm -->
 
 ## Ethical Boundaries
-
-[Your approach to ethical concerns in job search]
-
-**Likely no-go examples:**
-- [Industry/company type to avoid]
-
-**When in doubt:** Highlight the concern and discuss.
+<!-- Industries or company types you want to avoid -->
 
 ---
 
-## Dream Industries (Passion Areas)
-
-### Primary Excitement
-- [Industry 1]
-- [Industry 2]
-
-### Also Interested In
-- [Industry 3]
-- [Industry 4]
-
-### Reality Check
-[How flexible are you?]
-
----
-
-## Evaluating Opportunities - Quick Checklist
-
-1. **Role fit**: Does it match target roles?
-2. **Location**: Acceptable location/setup?
-3. **Ethics**: Any red flags?
-4. **Growth**: Learning and advancement opportunities?
-5. **Culture signals**: Good fit?
-6. **Passion alignment**: Bonus if dream industry
+## Company Preferences
+<!-- Size, culture, stage preferences -->

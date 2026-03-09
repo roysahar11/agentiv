@@ -13,101 +13,88 @@ Detailed reference files (read when deeper info is needed):
 ---
 
 ## Your Story (For Cover Letters & Outreach)
-Write your professional narrative here. What's your background? What drew you to tech? What makes you unique?
+<!-- Write a 2-3 paragraph narrative about your background. This is used for cover letters and outreach messages. Include:
+- What got you into tech / your field
+- Key career transitions or pivots
+- What drives you now
+- What makes you unique -->
 
-Example: "I've been building with technology since childhood, started with [X], and transitioned through [Y] before finding my focus in [Z]..."
+**What you seek**: [Describe what you're looking for — stability, growth, specific industry, etc.]
+
+**Core narrative**: [One sentence capturing your story for recruiters]
 
 ---
 
 ## About You
-A concise description of who you are professionally.
+<!-- Brief professional summary — who you are and what you're looking for -->
 
 ### Basic Info
 - **Age**: [Your age]
 - **Citizenships**: [Your citizenships / work authorizations]
 - **Languages**: [Languages and proficiency levels]
-- **Career stage**: [Brief description — e.g., "Seeking first tech job after bootcamp" or "3 years experience looking for senior role"]
+- **Career stage**: [Where you are in your career — new grad, career changer, experienced, etc.]
 - **Relocation**: [Open to relocation? Where?]
+
+### Links
+- LinkedIn: [Your LinkedIn URL]
+- GitHub: [Your GitHub URL]
 
 ### Technical Skills
 (full detail in profile/experience.md)
+<!-- List your main skill categories and key technologies -->
 - **Cloud**: [e.g., AWS, GCP, Azure]
-- **IaC/Config Management**: [e.g., Terraform, Ansible]
-- **Containers**: [e.g., Docker, Kubernetes]
-- **CI/CD**: [e.g., GitHub Actions, Jenkins]
-- **Programming**: [e.g., Python, JavaScript]
-- **Other**: [e.g., AI tools, databases]
+- **Languages**: [e.g., Python, JavaScript, Go]
+- **Tools**: [e.g., Docker, Kubernetes, Terraform]
 
 ### Certifications
-- [Certification 1]
-- [Certification 2]
+<!-- List relevant certifications -->
 
 ### Current Experience
-- **[Current Role] ([dates])**: [Brief description]
-- **[Previous Role] ([dates])**: [Brief description]
+<!-- Brief summary of current/recent roles -->
 
 ### Unique Differentiators
-- [What makes you stand out from other candidates?]
-- [Unique skills, backgrounds, or perspectives]
+<!-- What makes you stand out from other candidates? -->
 
 ---
 
 ## Dream Industries (Passion Areas)
 **Primary excitement:**
-- [Industry/field 1]
-- [Industry/field 2]
+<!-- Industries or domains you're most passionate about -->
 
-**Also interested in:**
-- [Industry/field 3]
-- [Industry/field 4]
+**Also very interested in:**
+<!-- Secondary interests -->
 
-**Reality**: [How flexible are you? E.g., "Open to any field for first job — passion areas are ideal but not requirements."]
+**Reality**: [How flexible are you? Are passion areas requirements or nice-to-haves?]
 
 ---
 
 ## Career Goals
-- **Primary Goal**: [e.g., Land first tech industry job]
-- **Direction**: [e.g., DevOps is core, but open to development roles]
-- **Long-term**: [e.g., Specialize in cloud architecture]
+- **Primary Goal**: [Your main objective]
+- **Direction**: [Career direction — e.g., backend, DevOps, full stack]
+- **Long-term**: [Where you want to be in 3-5 years]
 
 ## Target Roles
-- [Role 1]
-- [Role 2]
-- [Role 3]
+<!-- List specific role titles you're targeting -->
 
 ## Positioning
-**Your key selling points:**
-- [Selling point 1]
-- [Selling point 2]
-- [Selling point 3]
+<!-- How you want to position yourself to employers -->
 
 ### Ethical Boundaries
-[Any industries or companies you want to avoid? Leave blank if none.]
+<!-- Any industries or companies you want to avoid, and why -->
 
 ---
 
 ## Current Status
-- [What you're doing now]
-- [Are you employed? Freelancing? Studying?]
+<!-- What you're doing right now -->
 
 ## Job Search Channels (Active)
-
 ### Automated Pipeline (`/daily-job-fetch`)
-The core job scanning workflow covers:
-- **LinkedIn** (Chrome automation): Configurable keywords and experience filters
-- **WhatsApp groups**: Job groups scanned for postings
-- **Web scrapers** (HTTP-based): Secret Tel Aviv, Arbeitnow, SimplifyJobs
-- **Chrome-only sources** (manual mode): AllJobs, Built In, Wellfound
+<!-- Describe which sources the pipeline covers for you -->
 
 ### Other Active Channels
-- [Recruitment agencies]
-- [Job boards]
-- [Personal network]
+<!-- Other ways you're finding jobs -->
 
 ---
 
 ## Future Focus Areas
-- [ ] **Resume Improvement** — Polish structure, content, presentation
-- [ ] **LinkedIn Profile** — Optimize headline, about, experience sections
-- [ ] **LinkedIn Content** — Create posts to increase visibility
-- [ ] **GitHub Curation** — Make projects presentable with good READMEs
+<!-- Things you still want to improve or set up -->
