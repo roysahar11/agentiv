@@ -111,7 +111,7 @@ Open Claude Code in the project directory and run:
 
 The agent will guide you through a conversation to build your profile, create your base resume(s), configure job search parameters, and detect any WhatsApp integration you have installed. It can import from your existing resume or LinkedIn profile to speed things up.
 
-By default, WhatsApp integration is disabled. The `/setup` process will check if you have a WhatsApp-capable skill installed and update the `## Integrations` section in `CLAUDE.md` accordingly. Without WhatsApp, the pipeline still works — just no group scanning or push notifications. You can install WhatsApp later and re-run `/setup` to enable it.
+The `/setup` process will check if you have a WhatsApp-capable skill installed and update the `## Integrations` section in `CLAUDE.md` accordingly. Without WhatsApp, the pipeline still works — just no group scanning or push notifications. You can install WhatsApp later and re-run `/setup` to enable it.
 
 You can come back to `/setup` anytime to expand or update your profile.
 
