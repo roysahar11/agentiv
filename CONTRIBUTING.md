@@ -4,13 +4,13 @@ Thanks for considering contributing to the Claude Code Career Agent! This projec
 
 ## Ways to Contribute
 
-### New Job Scrapers
+### New Job Sources
 
-The most immediately useful contribution. If you write a scraper for a job source that isn't covered, others can plug it in instantly.
+Add places where the agent can find opportunities. There are several ways to do this:
 
-A scraper is a Node.js module in `scripts/scrapers/` that exports a `fetch(options)` function returning an array of jobs in the standard schema (see `scripts/scrapers/lib/types.js`). Register it in the scraper array in `fetch-all.js` and it works with the full pipeline.
-
-Look at `scripts/scrapers/israeli/secret-tel-aviv.js` (RSS), `scripts/scrapers/international/arbeitnow.js` (REST API), or `scripts/scrapers/international/simplify-jobs.js` (raw JSON) for examples of different fetching strategies.
+- **Chrome source instructions** — Teach the agent to navigate and extract listings from a job board using browser automation. This is just adding instructions to `config/search.md` describing how to navigate the site and what to extract.
+- **Scrapers** — Write a Node.js module for a job board API or RSS feed. Scrapers live in `scripts/scrapers/`, export a `fetch(options)` function, and return jobs in the standard schema (see `scripts/scrapers/lib/types.js`). Make sure you comply with the platform's Terms of Service.
+- **New strategies** — Not all job opportunities come from job boards. Company career pages, GitHub repos, Slack/Discord communities, newsletters, conference job boards — if you've found a way to surface opportunities that others could use, contribute it.
 
 ### New Skills
 
