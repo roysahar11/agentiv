@@ -1,17 +1,15 @@
 ---
 name: publish
-description: Sync product files from your private repo to a public repo (fork or your own). Sanitizes PII, generates .example templates, auto-cleans stale files, and commits with review. Useful for contributing back to the community.
+description: Contribute improvements back to the project. Syncs your private repo changes to a fork, automatically stripping personal data so you can open a clean PR.
 disable-model-invocation: true
 argument-hint: [optional: path to target repo]
 ---
 
 # Publish to Public Repo
 
-One-way sync from your private repo to a public target repo (a fork of the upstream project, or your own public version). Sanitizes personal data, generates example templates, cleans stale files, and presents a diff for review before committing.
+Easily contribute your improvements back to the community. This skill syncs product files from your private repo to a fork of the upstream project, automatically stripping personal data, generating clean example templates, and presenting a diff for review before committing. The result is a clean fork you can open a PR from.
 
-Use this when you want to:
-- **Contribute back** — sync improvements from your private repo to a fork of the upstream project, then open a PR
-- **Maintain a public version** — keep a sanitized public copy of your career agent
+Built new skills, added job sources, improved workflows? This is how you share them.
 
 ## Step 0: Load Config + Validate
 
