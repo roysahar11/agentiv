@@ -11,6 +11,8 @@ Built on [Claude Code](https://docs.anthropic.com/en/docs/claude-code), this is 
 
 It's modular — each capability works on its own. It's extensible — you can customize anything or build new capabilities through conversation. And it's honest — it will tell you when a job isn't a good fit, push back on your assumptions, and call out when you're keeping too many options open.
 
+> **Note:** This project was built for junior-level software industry job searches in Israel and Europe, for Hebrew and English speakers. The core system (profile building, resume customization, job evaluation, application drafting) is industry- and level-agnostic — it should work well for other career stages and tech sectors, and may work for other industries and languages, but these haven't been tested yet. Contributions to broaden coverage are very welcome.
+
 ## What You Can Do
 
 ### Evaluate Jobs Intelligently

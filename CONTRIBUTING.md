@@ -26,6 +26,15 @@ Bug fixes, better evaluation logic, resume template improvements, pipeline optim
 
 Better examples, clearer setup instructions, usage guides, translations.
 
+### Ideas
+
+Some areas where contributions would be particularly valuable:
+
+- **International job boards** — The built-in scrapers currently cover Israel (Secret Tel Aviv), Europe (Arbeitnow), and US entry-level (SimplifyJobs). Scrapers or Chrome sources for job boards in other regions, languages, or sectors would make the project useful to a much wider audience.
+- **Non-tech adaptations** — The core system is industry-agnostic, but the evaluation criteria and resume templates are tuned for software roles. Adapting these for other fields (design, data science, product, marketing) would help validate the project's flexibility.
+- **Resume templates** — Alternative layouts, styles, or formats beyond the current single-page template.
+- **Interview prep skills** — The agent has your full professional context and coaching notes — a structured interview prep skill could leverage that effectively.
+
 ## How to Contribute
 
 ### Simple path (small changes)
