@@ -98,7 +98,7 @@ function formatJobEntry(job, index) {
   if (job.verdict) lines.push(`- **Verdict**: ${job.verdict}`);
   if (job.reasoning) lines.push(`- **Reasoning**: ${job.reasoning}`);
   if (job.bestResume) lines.push(`- **Best Resume**: ${job.bestResume}`);
-  if (job.resumeScore) lines.push(`- **Resume Score**: ${job.resumeScore}/100`);
+  if (job.resumeScore) lines.push(`- **Base Resume Match Score**: ${job.resumeScore}/100`);
   if (job.notes) lines.push(`- **Notes**: ${job.notes}`);
   lines.push('');
 

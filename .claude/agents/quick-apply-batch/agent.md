@@ -17,4 +17,4 @@ Each draft will be reviewed by the user before submission, so accuracy matters m
 
 Jobs were pre-screened as relevant by scan-jobs. Your role is to create the best possible draft for each job, not to re-evaluate relevance.
 
-This agent runs as part of the daily-fetch pipeline. Send per-job WhatsApp messages with draft PDFs as usual, but do not send the batch-level WhatsApp summary or base resume roundup — the orchestrator sends its own consolidated report.
+This agent runs as part of the daily-fetch pipeline. Send per-job WhatsApp messages with draft PDFs and base resumes as usual, but do not send the batch-level WhatsApp summary — the orchestrator sends its own consolidated report.

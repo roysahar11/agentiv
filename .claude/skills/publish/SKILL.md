@@ -42,10 +42,10 @@ Walk the private repo and classify every file into one of four tiers. This is dy
 
 | Tier | Principle | Examples |
 |------|-----------|---------|
-| **Product** | Reusable workflow logic, skills, agents, scripts, project config | `.claude/skills/*`, `.claude/agents/*`, `scripts/*`, `CLAUDE.md`, `package.json`, `package-lock.json`, `.claude/settings.json` |
+| **Product** | Reusable workflow logic, skills, agents, scripts, project config | `.claude/skills/*` (including `publish/SKILL.md`), `.claude/agents/*`, `scripts/*`, `CLAUDE.md`, `package.json`, `package-lock.json`, `.claude/settings.json` |
 | **Template** | Personal data files that new users need their own version of | `profile/*.md`, `config/user.md`, `config/search.md` |
 | **Protected** | Target-repo-only files maintained independently — never overwritten | `LICENSE`, `COMPLIANCE.md`, `CONTRIBUTING.md`, `Resumes/README.md`, `.git/`, `.gitignore`, `.claude/skills/setup/`, `*.example.md`, `README.md` |
-| **Ignored** | Operational data, personal state, runtime artifacts | `Applications/`, `Resumes/*.json`, `state/`, `logs/`, `Reports/`, `research/`, `.claude/settings.local.json`, `.claude/memory/`, `.claude/plans/`, `.claude/ideas/`, `config/publish.md`, `node_modules/`, `.DS_Store`, `._*`, `state/publish-manifest.json` |
+| **Ignored** | Operational data, personal state, runtime artifacts | `Applications/`, `Resumes/*.json`, `state/`, `logs/`, `Reports/`, `research/`, `.claude/settings.local.json`, `.claude/memory/`, `.claude/plans/`, `.claude/ideas/`, `config/publish.md`, `state/publish-manifest.json`, `node_modules/`, `.DS_Store`, `._*`, `scripts/daily-job-fetch.sh` |
 
 When encountering a file not listed above, classify it by its principle:
 - Reusable workflow logic → Product

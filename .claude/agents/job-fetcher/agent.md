@@ -161,7 +161,7 @@ After extracting all WhatsApp jobs, save them to `/tmp/whatsapp-jobs-{DATE}.json
     "url": "https://...",
     "title": "Junior DevOps Engineer",
     "company": "StartupCo",
-    "source": "WhatsApp - Tech Jobs Group",
+    "source": "WhatsApp - {Group Name}",
     "location": "Tel Aviv",
     "description": null,
     "notes": "Extra context from the message (or null if none)",

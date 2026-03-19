@@ -55,7 +55,7 @@ Accept job postings in any format (one or multiple):
    **Note:** In pipeline mode, this filtering is already done upstream by job-description-fetcher. Only apply this filter when fetching URLs yourself (standalone use).
 
    When opening a LinkedIn job URL (`linkedin.com/jobs/view/...`) to extract info, **check the applicant count first** before doing a full analysis.
-   - If the job has **more than 30 applicants** → immediately mark as **❌ Skip** with reason "Over 30 applicants — high competition" and move to the next job
+   - If the job has more applicants than the max-applicants threshold (read from `config/search.md` → `## Filtering` → `Max applicants`, default: 30) → immediately mark as **❌ Skip** with reason "Over {threshold} applicants — high competition" and move to the next job
    - This usually does not apply to WhatsApp-sourced jobs or non-LinkedIn URLs, but if a job post from another source has applicant count, treat it the same.
 
 3. **For each job posting, extract key info**:
@@ -72,7 +72,7 @@ Accept job postings in any format (one or multiple):
    **Instagram stories**: Stories are a tricky UI for screenshot-based interaction. Key mechanics:
    - Stories auto-advance every ~4 seconds. Every tool call (screenshot, click) takes time — avoid adding "wait" actions between them, as the story will advance while you wait.
    - Navigate to `instagram.com/stories/{username}/` in Chrome.
-   - Click the **link sticker** (white pill-shaped element showing a domain like "Careers.example.com") to navigate to the actual job URL. The sticker contains the full direct link — don't screenshot the domain and browse manually.
+   - Click the **link sticker** (white pill-shaped element showing a domain like "Careers.checkpoint.com") to navigate to the actual job URL. The sticker contains the full direct link — don't screenshot the domain and browse manually.
    - If a story advances before you can click: use the **left side of the screen** or left arrow to go back, then try again.
    - If you miss a story or extraction fails, retry — persistence pays off with this UI. Only move on after a genuine attempt.
 
@@ -82,7 +82,7 @@ Accept job postings in any format (one or multiple):
    - **Skills match**: Does the user have the required skills? (High/Medium/Low)
    - **Experience level**: Is it junior-friendly or does it require years of experience?
    - **Location fit**: Does it match the user's location preferences?
-   - **Ethical check**: Any red flags per the user's ethical preferences?
+   - **Ethical check**: Any red flags per the user's ethical boundaries?
    - **Passion alignment**: Does it hit any dream industries? (bonus, not required)
 
 5. **Verdict**:
@@ -120,7 +120,7 @@ This happens in two passes — the JSON file gets updated twice:
 **After Pass 2** (resume matching), update each RELEVANT/DISCUSS entry with:
 ```json
 {
-  "bestResume": "Applications/ExampleCo/Prompt-Engineer/final/resume.json",
+  "bestResume": "Applications/FullPath/Prompt Engineer/final/resume.json",
   "resumeScore": 85
 }
 ```
@@ -143,9 +143,9 @@ Same two-pass logic applies. The table and detailed notes get filled after both 
 | # | Company | Role | Verdict | Best Resume | Score | Key Reason |
 |---|---------|------|---------|-------------|-------|------------|
 | 1 | Acme Corp | Junior DevOps | ✅ Relevant | base-devops | 72 | Strong skills match, hybrid Tel Aviv |
-| 2 | FoodCo | DevOps Engineer | ⚠️ Discuss | base-devops | 68 | Good role but food industry - ethical check |
+| 2 | FoodCo | DevOps Engineer | ⚠️ Discuss | base-devops | 68 | Good role but ethical concern - check with user |
 | 3 | BigTech | Senior DevOps | ❌ Skip | - | - | Requires 5+ years experience |
-| 4 | StartupX | Full Stack Dev | ✅ Relevant | ExampleCo | 85 | Python/JS match, AI company |
+| 4 | StartupX | Full Stack Dev | ✅ Relevant | CustomResume | 85 | Python/JS match, AI company |
 
 ---
 
@@ -203,7 +203,7 @@ Add to each relevant job's detailed notes:
 
 ```
 **Best Resume Match:**
-- Resume: `Applications/ExampleCo/Prompt-Engineer/final/resume.json`
+- Resume: `Applications/FullPath/Prompt Engineer/final/resume.json`
 - Score: 78/100
 - Why: Strong AI/LLM emphasis matches, but missing Kubernetes highlights needed for this role
 ```

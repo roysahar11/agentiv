@@ -69,7 +69,7 @@ If `description` is a non-empty string (from scrapers), still detect the languag
 - **Validate content**: Check that the fetched page's job title and/or company reasonably match the expected `title` and `company` fields. Minor variations are fine (e.g., "Jr. DevOps" vs "Junior DevOps Engineer"). A complete mismatch (different role entirely) means the URL points to the wrong job.
 - **Language detection**: Detect the language of the fetched content (see Language Detection below). If unsupported → set `SKIP_LANGUAGE` and move on (no need for Tier 2).
 - **LinkedIn applicant count**: If the fetched content mentions applicant count (e.g., "Over 200 applicants", "Be among the first 25 applicants"), extract it as `applicantCount`.
-  - If applicantCount > 30 → set `fetchStatus: "SKIP_HIGH_APPLICANTS"`, skip description extraction
+  - If applicantCount exceeds the max-applicants threshold from the prompt (default: 30) → set `fetchStatus: "SKIP_HIGH_APPLICANTS"`, skip description extraction
 - If WebFetch succeeds AND content validates AND language is acceptable → set `fetchStatus: "OK"`, write description
 - If content mismatch → fall through to Tier 2
 - If WebFetch fails (timeout, 403, empty, error) → fall through to Tier 2
@@ -84,7 +84,7 @@ Use Chrome for ANY Tier 1 failure — wrong content, network error, blocked, emp
 5. Use `get_page_text` to extract content. Also use `read_page` if needed to capture metadata (experience level, salary, seniority) that may appear in sidebar widgets or summary sections outside the main description body
 6. **Validate content**: Same title/company match check as Tier 1
 7. **Language detection**: Same language check as Tier 1. If unsupported → `SKIP_LANGUAGE`
-8. **LinkedIn applicant count**: Check the page for applicant count and apply the same >30 filter
+8. **LinkedIn applicant count**: Check the page for applicant count and apply the same max-applicants filter
 9. If success → set `fetchStatus: "OK"`
 10. If Chrome also fails or content still mismatches → set `fetchStatus: "FETCH_FAILED"` with error in `fetchError`
 
@@ -92,7 +92,7 @@ Use Chrome for ANY Tier 1 failure — wrong content, network error, blocked, emp
 
 After fetching content (from any source), detect the language and set the `language` field.
 
-**Accepted languages**: English, Hebrew. Bilingual postings that include English are acceptable.
+**Accepted languages**: Configure in `config/search.md`. Default: English, Hebrew. Bilingual postings that include English are acceptable.
 
 **Other languages** (German, French, Dutch, etc.): Set `fetchStatus: "SKIP_LANGUAGE"`, set `language` to the detected language, and don't store the description.
 

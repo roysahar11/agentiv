@@ -172,7 +172,7 @@ const linkedinIntl = loadJSON(`/tmp/linkedin-jobs-intl-${DATE}.json`);
 
 // --- Build pipelines ---
 let ilEntries = [
-  ...scrapedIL.map(e => normalize(e, "secret-tel-aviv")),
+  ...scrapedIL.map(e => normalize(e, "scraped")),
   ...linkedinIL.map(e => normalize(e, "LinkedIn IL")),
   ...whatsapp.map(e => normalize(e, "WhatsApp")),
   ...chromeIL.map(e => normalize(e, e.source || "Chrome")),
@@ -180,7 +180,7 @@ let ilEntries = [
 ilEntries = dedup(ilEntries);
 
 let intlEntries = [
-  ...scrapedIntl.map(e => normalize(e, e.source || "arbeitnow")),
+  ...scrapedIntl.map(e => normalize(e, "scraped")),
   ...linkedinIntl.map(e => normalize(e, "LinkedIn Intl")),
 ];
 intlEntries = dedup(intlEntries);

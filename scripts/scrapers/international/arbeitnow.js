@@ -3,7 +3,7 @@
 const https = require('https');
 const { makeJob, makeResult } = require('../lib/types');
 
-const SOURCE = 'arbeitnow';
+const SOURCE = 'arbeitnow.com';
 const API_BASE = 'https://www.arbeitnow.com/api/job-board-api';
 const PER_PAGE = 25;
 const MAX_PAGES = 20; // Safety limit

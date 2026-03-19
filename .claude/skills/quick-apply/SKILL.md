@@ -62,7 +62,7 @@ Delete `review-notes.md` after the final version — it's a working artifact onl
 
 When a batch entry has multiple locations (a `Locations` / `Location Cities` field listing several cities), the JD is the same for all locations. Handle as follows:
 1. Create one resume draft (same JD, one `/customize-resume` invocation)
-2. Copy the draft to each location's directory (e.g., `NVIDIA/DevOps-Engineer-Raanana/`, `NVIDIA/DevOps-Engineer-Yokneam/`)
+2. Copy the draft to each location's directory (e.g., `CompanyName/Role-CityA/`, `CompanyName/Role-CityB/`)
 3. Create a `status.md` in each directory
 4. Send one WhatsApp message listing all locations
 
@@ -74,50 +74,71 @@ After creating the draft, create `status.md` in the application directory (same 
 # {Role} @ {Company}
 - **Status**: Draft
 - **Date**: {today's date YYYY-MM-DD}
-- **Source**: {WhatsApp group / LinkedIn / Direct}
+- **Source**: {use the `source` field from pipeline data if available, otherwise: WhatsApp group / LinkedIn / Direct}
 - **URL**: {job posting URL}
 - **Notes**: Draft resume created by quick-apply.
 ```
 
 If `status.md` already exists (e.g., from a previous run), don't overwrite it.
 
-### 4. Send WhatsApp Summary
+### 4. Send WhatsApp Notification
 
-Use the `/whatsapp` skill to send the user a message with:
-- Role title & Company name
-- Link to job posting
-- Which base resume was used (and match score, if available from scan-jobs metadata)
-- Both the draft PDF and the base resume PDF attached
+For each job, send the user two WhatsApp messages via `/whatsapp` (autonomous mode, self-chat):
+
+1. **Draft PDF with caption** — send the draft PDF as a file with the notification text as its caption (see format below). This keeps the message and PDF paired as one atomic WhatsApp message, even when multiple agents send in parallel.
+
+2. **Base resume PDF** — immediately after, send the PDF of the base resume used as the starting point, so the user can compare.
+
+Send both back-to-back before moving to the next job. Keep file names as-is from the rendering pipeline.
 
 **Scope boundaries:**
 - Everything stays in `drafts/` — only the user can finalize to `final/`
 - Profile files are read-only during quick-apply
 
-## After All Jobs Processed
+### Caption Format
 
-1. **Send base resumes used** - For each unique base resume used in the batch, send the PDF via WhatsApp so the user can compare customizations against the originals.
+```
+{Role} @ {Company}
+{Verdict, if applicable}
 
-2. **Send final summary** via WhatsApp:
-   - How many jobs were processed
-   - Any issues encountered
-   - What's ready for the user's review
+Job: {URL}
 
-## Example WhatsApp Message
+Base Resume Used: {base resume name} (base resume match score: {score}/100, if available)
+
+Draft ready for your review. Key customizations:
+- {what was emphasized, reordered, or added}
+
+{Notes — scan-jobs reasoning, discussion points, concerns (visa, language, experience gaps), or any technical issues encountered during drafting}
+```
+
+**Base resume match score**: From scan-jobs metadata (`Base Resume Match Score` field) when available — it measures how well the base resume matched the JD before customization, not job relevance. Omit when not available.
+
+### Caption Example
 
 ```
 DevOps Engineer @ Webbing Solutions
+RELEVANT
 
 Job: https://webbingsolutions.com/careers/OTQuNTZC/
 
-Base: base-devops resume
+Base Resume Used: base-devops (base resume match score: 72/100)
 
-Draft ready for your review - see attached PDF. Key customizations:
+Draft ready for your review. Key customizations:
 - Emphasized AWS networking (VPC, subnets)
 - Highlighted Terraform and ECS
 - Reordered skills to match their priorities
 
-Let me know when you're back to review!
+Strong skills match. Hybrid Tel Aviv, 2 days/week.
 ```
+
+## After All Jobs Processed
+
+When processing multiple jobs in standalone mode, send a final summary via WhatsApp:
+- How many jobs were processed
+- Any issues encountered
+- What's ready for the user's review
+
+(Batch agents running as part of daily-fetch skip this — the orchestrator sends its own consolidated report.)
 
 ## After Summary: Commit and Push
 
