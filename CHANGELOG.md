@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.1] - 2026-03-19
+
+### Skills
+- **quick-apply**: Enhanced WhatsApp notifications — draft PDF sent with caption (verdict, URL, base resume score, key customizations), base resume PDF sent back-to-back for comparison, source field from pipeline data
+- **daily-job-fetch**: Scan-jobs prompts now reference profile files instead of hardcoded summaries; removed hardcoded language/remote preferences (read from evaluation-criteria.md)
+- **publish**: Added publish/SKILL.md to Product tier, scripts/daily-job-fetch.sh to Ignored list
+
+### Agents
+- **job-description-fetcher**: Language config now references config/search.md instead of hardcoded values
+- **scan-jobs**: Generalized all user references for better reusability
+- **quick-apply-batch**, **job-fetcher**: Minor generalization fixes
+
+### Scripts
+- Minor formatting fixes in create-quick-apply-batches.js, merge-pipeline.js, arbeitnow.js
+
 ## [0.1.0] - 2026-03-18
 
 Initial public release.
