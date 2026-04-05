@@ -14,10 +14,27 @@ Built new skills, added job sources, improved workflows? This is how you share t
 ## Step 0: Load Config + Validate
 
 1. Read `config/publish.md` for the target repo path (or use `$ARGUMENTS` if a path was provided)
-2. Verify the target repo exists and is a git repo (`git -C "{TARGET_PATH}" status`)
-3. If the target repo has a dirty working tree, warn and ask whether to proceed or abort
+2. Verify the private repo is on the `main` branch. If not, warn and ask whether to switch to main or abort. Publishing should always be done from main — feature branches may contain incomplete work.
+3. Verify the target repo exists and is a git repo (`git -C "{TARGET_PATH}" status`)
+4. If the target repo has a dirty working tree, warn and ask whether to proceed or abort
 
 Store `TARGET_PATH` for use in all subsequent steps.
+
+## Step 0.1: Check Uncommitted Changes
+
+Before detecting changes via `git ls-tree` (which only sees committed state), check for uncommitted modifications in the private repo:
+
+```bash
+git status --short
+```
+
+If there are uncommitted changes to Product or Template files:
+1. Present them grouped by tier (Product, Template, Ignored/other)
+2. Ask the user which ones to commit before publishing, which to leave uncommitted, and which (if any) belong on a different branch
+3. Wait for the user's decision and commit as directed
+4. Only then proceed to Step 0.5
+
+This prevents the situation where meaningful changes are silently skipped because they weren't committed.
 
 ## Step 0.5: Change Detection
 
